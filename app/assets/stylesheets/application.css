@@ -13,13 +13,3 @@
  *= require_tree .
  *= require_self
  */
-.class {
-    background-color: #000000;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-}
