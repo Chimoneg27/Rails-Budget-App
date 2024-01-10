@@ -13,3 +13,86 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+:root {
+  --primary-color: #3778c2;
+  --secondary-color: #5fb523;
+  --text-color: #434b54;
+}
+
+.list-group {
+  text-decoration: none;
+  width: 90%;
+}
+
+.list-group a {
+  text-decoration: none;
+  width: 100%;
+}
+
+.list-group-item {
+  width: 100%;
+}
+
+body {
+  background-color: #f3f4f6;
+}
+
+.group-container,
+.group-container ul {
+  text-decoration: none;
+  list-style: none;
+  background-color: #f3f4f6;
+}
+
+.Purchases {
+  background-color: #f3f4f6;
+}
+
+.navigation {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1rem;
+}
+
+.groups {
+  background-color: #f3f4f6;
+}
+
+.add {
+  background-color: var(--secondary-color);
+  width: 100%;
+}
+
+.add-btn {
+  width: 100%;
+}
+
+.add a {
+  width: 25%;
+}
+
+#group_name {
+  width: 89%;
+}
+
+#group_icon {
+  width: 90%;
+  padding: 1rem;
+}
+
+#purchase_name {
+  width: 90%;
+}
+
+#purchase_amount {
+  width: 90%;
+}

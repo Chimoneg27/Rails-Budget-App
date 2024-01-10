@@ -1,14 +1,9 @@
 class PurchasesController < ApplicationController
   def index
-    if params[:group_id]
-      @group = Group.find(params[:group_id])
-      @update_purchases = @group.purchases.where(author_id: current_user.id)
-      @total_amount = @update_purchases.sum(:amount)
-      @purchases = @update_purchases.to_a
-    elsif params[:user_id]
-      @user = User.find(params[:user_id])
-      @purchases = @user.purchases
-    end
+    @group = Group.find(params[:group_id])
+    @update_purchases = @group.purchases.where(author_id: current_user.id).order(created_at: :desc)
+    @total = @update_purchases.map(&:amount).sum
+    @purchases = @update_purchases.to_a
   end
 
   def new
@@ -18,18 +13,24 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    group_params = params[:purchase][:group]
-    name = params[:purchase][:name]
-    amount = params[:purchase][:amount]
+    @purchase = current_user.purchases.new(purchase_params)
+    @group = Group.find(params[:group_id])
 
-    @group = Group.find_by(name: group_params)
-    @purchase = current_user.purchases.build(name:, amount:)
-    @group.purchases << @purchase
-    if @group.save
-      redirect_to group_purchases_path(@group)
+    if @purchase.save
+      GroupDetail.create(group_id: @group.id, purchase_id: @purchase.id)
+      redirect_to group_purchases_path(group_id: @group.id)
     else
       render :new
     end
+  end
+
+  def destroy
+    @purchase = Purchase.find(params[:id])
+    @group = Group.find(@purchase.group_id)
+    @group_purchase = GroupDetail.where(purchase_id: @purchase.id)
+    @group_purchase.destroy_all
+    @purchase.destroy!
+    redirect_to group_purchases_path(group_id: @group.id)
   end
 
   private

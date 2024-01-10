@@ -3,7 +3,24 @@ class GroupsController < ApplicationController
     @groups = current_user.groups.includes(:purchases)
   end
 
-  # I want to create a new group and save it to the database
+  def new
+    @group = Group.new
+    @options = [
+      ['🍔'],
+      ['🛒'],
+      ['🚗'],
+      ['🐶'],
+      ['📚'],
+      ['💻'],
+      ['🎁'],
+      ['🏠'],
+      ['🏥'],
+      ['🎬'],
+      ['👔'],
+      ['🎓']
+    ]
+  end
+
   def create
     @group = current_user.groups.build(group_params)
     if @group.save
@@ -11,6 +28,14 @@ class GroupsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def splash; end
+
+  def destroy
+    @group = current_user.groups.find(params[:id])
+    @group.destroy
+    redirect_to groups_path
   end
 
   private
