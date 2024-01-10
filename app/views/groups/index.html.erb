@@ -1,0 +1,31 @@
+<%= render "shared/header", title: 'Groups' %>
+
+<section class="container-fluid h-100 p-1 groups d-flex justify-content-center">
+  <% if @groups.empty?%>
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">There are no groups yet.</h2>
+        <p class="card-text">Click the link below to add some.</p>
+      </div>
+    </div>
+  <% else %>
+    <ul class="list-group container-fluid group-page mt-3 d-flex mx-auto my-1">
+      <% @groups.each do |group| %>
+        <% total = group.purchases.sum(:amount) %>
+        <%= link_to group_purchases_path(group_id: group.id), class: "list-group" do%>
+          <li class="list-group-item d-flex justify-content-evenly fs-4 fw-bold">
+            <div><%= group.icon %></div>
+            <div><%= group.name %></div>
+            <div>Total: $<%= total %></div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</section>
+
+<div class="d-flex justify-content-center mt-5 p-3 add">
+  <%= link_to new_group_path do %>
+    <button class="btn border border-white border-3 fs-5 fw-bold text-white w-100">Add Group</button>
+  <% end %>
+</div>
