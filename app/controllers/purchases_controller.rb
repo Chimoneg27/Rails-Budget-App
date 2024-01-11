@@ -1,4 +1,5 @@
 class PurchasesController < ApplicationController
+  before_action :authenticate_user!
   def index
     @group = Group.find(params[:group_id])
     @update_purchases = @group.purchases.where(author_id: current_user.id).order(created_at: :desc)
