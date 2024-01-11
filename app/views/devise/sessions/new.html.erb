@@ -1,0 +1,32 @@
+<header class="p-2 text-align center headers d-flex justify-content-between align-items-center">
+  <%= link_to splash_path do %>
+    <button class="btn btn-outline-light" type="button">
+      <i class="bi bi-arrow-left"></i>
+    </button>
+  <% end %>
+  <h1 class="text-center text-white">Login</h1>
+</header>
+
+<div class="container sign-forms">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'd-flex flex-column align-items-center' }) do |f| %>
+
+  <div class="field sign-forms-fields">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter your email", class: "w-100 p-1 fs-6 fw-bold" %>
+  </div>
+
+  <div class="field sign-forms-fields">
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Enter your password", class: "w-100 p-1 fs-6 fw-bold" %>
+  </div>
+
+  <%# <% if devise_mapping.rememberable? %>
+    <%# <div class="field"> %>
+      <%# <%= f.check_box :remember_me %>
+      <%# <%= f.label :remember_me %>
+    <%# </div> %>
+  <%# <% end %>
+
+  <div class="actions mt-5 w-100">
+    <%= f.submit "Log in", class: "splash-btn p-3 border border-none fs-4 fw-bold text-white" %>
+  </div>
+<% end %>
+</div>

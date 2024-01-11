@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @groups = current_user.groups.includes(:purchases)
   end
@@ -29,8 +30,6 @@ class GroupsController < ApplicationController
       render :new
     end
   end
-
-  def splash; end
 
   def destroy
     @group = current_user.groups.find(params[:id])
