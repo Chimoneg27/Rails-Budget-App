@@ -38,6 +38,25 @@
   width: 100%;
 }
 
+.splash {
+  height: 95vh;
+}
+
+.sign-forms {
+  width: 100%;
+  height: 95vh;
+  padding: 2rem;
+}
+
+.sign-forms-fields {
+  width: 90%;
+  padding: 1rem;
+}
+
+.logs {
+  margin-top: 10rem;
+}
+
 .list-group-item {
   width: 100%;
 }
@@ -95,4 +114,20 @@ body {
 
 #purchase_amount {
   width: 90%;
+}
+
+.splash-btn {
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+}
+
+.headers {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1rem;
+  width: 100%;
 }

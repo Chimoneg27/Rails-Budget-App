@@ -14,6 +14,10 @@ gem 'puma', '>= 5.0'
 
 gem 'importmap-rails'
 
+gem 'devise', '~> 4.9', '>= 4.9.3'
+
+gem 'cancancan'
+
 gem 'turbo-rails'
 
 gem 'stimulus-rails'
