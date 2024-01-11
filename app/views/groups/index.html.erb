@@ -13,7 +13,7 @@
       <% @groups.each do |group| %>
         <% total = group.purchases.sum(:amount) %>
         <%= link_to group_purchases_path(group_id: group.id), class: "list-group" do%>
-          <li class="list-group-item d-flex justify-content-evenly fs-4 fw-bold">
+          <li class="list-group-item d-flex justify-content-evenly fs-4 fw-bold mb-3">
             <div><%= group.icon %></div>
             <div><%= group.name %></div>
             <div>Total: $<%= total %></div>
