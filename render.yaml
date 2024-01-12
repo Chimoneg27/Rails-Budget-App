@@ -1,7 +1,7 @@
 databases:
   - name: postgres
     databaseName: rails_budget_app_production
-    user: buggy
+    user: mysite
     plan: free
 
 services:
