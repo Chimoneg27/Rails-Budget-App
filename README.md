@@ -16,6 +16,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [🚀 Live Demo](#live-demo)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -54,6 +55,18 @@ Key features of the application.
 - User authentication
 - Splash page
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+[Live Demo Link](https://buggy-budget-app.onrender.com/)
+
+##  <a Video walkthrough name="live-demo"></a>
+
+[Video Walkthrough](https://www.loom.com/share/b55e4426a91e48199388f72fe90e5501?sid=78ef966d-4190-4dfd-b3f6-54875b4aa67b)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
