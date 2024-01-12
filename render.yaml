@@ -1,12 +1,12 @@
 databases:
-  - name: mysite
-    databaseName: mysite
+  - name: budget-db
+    databaseName: rails_budget_app_production_8k6d
     user: mysite
     plan: free
 
 services:
   - type: web
-    name: mysite
+    name: Buggy Budget App
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
