@@ -3,7 +3,7 @@ class Group < ApplicationRecord
 
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
   validates :icon, presence: true
-  validates :amount, presence: true, numericality: true
+
   has_many :group_details, dependent: :destroy
   has_many :purchases, through: :group_details
 end

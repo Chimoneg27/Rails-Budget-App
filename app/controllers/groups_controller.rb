@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_options, only: %i[new create]
   def index
     @groups = current_user.groups.includes(:purchases)
   end
@@ -41,5 +42,22 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name, :icon, :amount)
+  end
+
+  def set_options
+    @options = [
+      ['🍔'],
+      ['🛒'],
+      ['🚗'],
+      ['🐶'],
+      ['📚'],
+      ['💻'],
+      ['🎁'],
+      ['🏠'],
+      ['🏥'],
+      ['🎬'],
+      ['👔'],
+      ['🎓']
+    ]
   end
 end
