@@ -54,6 +54,10 @@ Key features of the application.
 - A user can create a purchase for a group
 - User authentication
 - Splash page
+- User can view all purchases
+- User can view all groups
+- User can view all purchases for a group
+- Login and signup links on splash page
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
