@@ -1,5 +1,5 @@
 databases:
-  - name: postgres
+  - name: budget-db
     databaseName: rails_budget_app_production
     user: mysite
     plan: free
