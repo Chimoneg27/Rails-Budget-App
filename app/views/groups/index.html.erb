@@ -2,7 +2,7 @@
 
 <section class="container-fluid h-100 p-1 groups d-flex justify-content-center">
   <% if @groups.empty?%>
-    <div class="card">
+    <div class="card mt-3">
       <div class="card-body">
         <h2 class="card-title">There are no groups yet.</h2>
         <p class="card-text">Click the link below to add some.</p>
@@ -24,8 +24,8 @@
   <% end %>
 </section>
 
-<div class="d-flex justify-content-center mt-5 p-3 add">
+<div class="d-flex justify-content-center mt-5 p-3 add" style="position: absolute; bottom: 0;">
   <%= link_to new_group_path do %>
-    <button class="btn border border-white border-3 fs-5 fw-bold text-white w-100">Add Group</button>
+    <button class="btn border border-white border-1 fs-5 text-white w-100">Add Group</button>
   <% end %>
 </div>

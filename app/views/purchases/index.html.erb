@@ -8,25 +8,25 @@
       </div>
     </div>
   <% else %>
-    <ul class="group-container fs-4 fw-bold mb-3 w-90 container">
+    <ul class="group-container fs-4 fw-normal w-90 container">
       <li class="group-title mt-3 d-flex justify-content-between mx-auto shadow-lg px-3 py-3 bg-white mx-auto my-3">
         <div class="text-4xl me-4"><%= @group.icon %></div>
         <div class="text-lg opacity-[0.8] font-semibold uppercase"><%= @group.name %></div>
-        <div class="text-lg opacity-[0.8] font-semibold uppercase">Total: $<%= @total %></div>
+        <div class="text-lg opacity-[0.8] font-semibold uppercase pricy">Total: $<%= @total %></div>
       </li>
     </ul>
 
-    <div class="purchase-container mt-3">
+    <div class="purchase-container">
       <ul class="container">
       <% @purchases.each do |purchase| %>
         <li class="purchase d-flex justify-content-between mb-5 fs-5 fw-bold w-[90%] mx-auto items-center shadow-lg px-3 py-3 my-5 bg-white">
             <div class="leftt">
-              <div class="text-lg opacity-[0.8] font-semibold uppercase"><%= purchase.name %></div> 
-              <div class="text-sm opacity-[0.8]"><%= purchase.created_at.strftime("%d-%m-%Y") %></div>
+              <div class="text-lg opacity-[0.8] font-semibold uppercase text-muted"><%= purchase.name %></div> 
+              <div class="text-sm opacity-[0.8] text-muted"><%= purchase.created_at.strftime("%d-%m-%Y") %></div>
             </div>
 
             <div class="right">
-              <div class="text-4xl me-4">$<%= purchase.amount %></div>
+              <div class="text-4xl me-4 pricy">$<%= purchase.amount %></div>
             </div>
         </li>
         <% end %>
@@ -35,8 +35,8 @@
     </div>
 </section>
 
-<div class="d-flex justify-content-center mt-5 p-3 add">
+<div class="d-flex justify-content-center mt-5 p-3 add" style="position: absolute; bottom: 0;">
   <%= link_to new_group_purchase_path do %>
-    <button class="btn border border-white border-2 fs-5 fw-bold text-white w-100">Add Purchase</button>
+    <button class="btn border border-white border-1 fs-5 fw-normal text-white w-100">Add Purchase</button>
   <% end %>
 </div>
