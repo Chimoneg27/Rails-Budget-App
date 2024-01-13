@@ -1,0 +1,11 @@
+<div class="container container-fluid splash w-100 d-flex justify-content-center pt-5">
+  <div class="row w-100 d-flex justify-content-center mt-5">
+    <div class="col-md-6 col-md-offset-3 h-100 d-flex flex-column justify-content-between">
+      <h1 class="text-center pulse">Buggy Budgets</h1>
+      <p class="text-center mb-5">Please login or sign up to continue</p>
+      <div class="text-center mt-5 d-flex flex-column logs w-100">
+        <%= link_to "Login", new_user_session_path, class: "btn btn-primary mb-3 fs-4 fw-bold" %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "btn splash-btn fs-4 fw-bold text-white" %>
+      </div>
+    </div>
+</div>

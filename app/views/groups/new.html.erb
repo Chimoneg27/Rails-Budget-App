@@ -1,0 +1,17 @@
+<%= render "shared/header", title: 'Add New Group' %>
+
+<div class="form-container mt-3 w-100">
+    <%= form_with model: @group, class: "d-flex flex-column justify-content-center", local: true do |form| %>
+      <div class="field mb-3 w-85 d-flex justify-content-center field-group-one">
+        <%= form.text_field :name, placeholder: "Add A New Group", class: "form-control fs-4" %>
+      </div>
+
+      <div class="field mb-3 w-100 p-2 d-flex justify-content-center field-group">
+        <%= form.select :icon, options_for_select(@options, selected: @group.icon), { prompt: "Select an icon" }, class: "fs-4" %>
+      </div>
+
+      <div class="field mt-5 w-100 add p-3 d-flex justify-content-center form-bottom">
+        <%= form.submit "Create Group", class: "btn border border-white border-1 fs-5 text-white w-75" %>
+      </div>
+    <% end %>
+</div>

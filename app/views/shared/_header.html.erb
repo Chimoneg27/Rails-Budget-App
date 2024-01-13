@@ -1,0 +1,35 @@
+<nav class="navigation w-100 partial-header">
+  <ul class="d-flex justify-content-between w-100">
+    <% if title != 'Groups' && title != 'Add New Purchases' %>
+      <li class="nav-item">
+        <%= link_to groups_path(@group) do %>
+          <button class="btn btn-outline-light" type="button" onclick="history.back()">
+            <i class="bi bi-arrow-left"></i>
+          </button>
+        <% end %>
+      </li>
+    <% end %>
+    <% if title == 'Add New Purchases' %>
+      <li class="nav-item">
+        <%= link_to group_purchases_path(group_id: @group.id) do %>
+          <button class="btn btn-outline-light" type="button">
+            <i class="bi bi-arrow-left"></i>
+          </button>
+        <% end %>
+      </li>
+    <% end %>
+    <li class="nav-item fs-4 fw-bold text-align-center">
+      <%= title %>
+    </li>
+
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
+          <button class="btn btn-outline-light" type="button">
+            <i class="bi bi-box-arrow-right"></i>
+          </button>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
