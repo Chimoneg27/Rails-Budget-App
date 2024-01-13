@@ -33,6 +33,10 @@
   width: 90%;
 }
 
+.form-container {
+  height: 80vh;
+}
+
 .list-group a {
   text-decoration: none;
   width: 100%;
@@ -96,7 +100,7 @@ body {
 }
 
 .add a {
-  width: 25%;
+  width: 85%;
 }
 
 #group_name {
@@ -130,4 +134,54 @@ body {
   color: #fff;
   padding: 1rem;
   width: 100%;
+}
+
+.form-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.purchase-form {
+  height: 100%;
+}
+
+.form-container form {
+  height: 100%;
+}
+
+.purchase-container {
+  padding: 0;
+  margin-top: -3rem;
+}
+
+.field-group-one {
+  margin-top: -8rem;
+}
+
+.partial-header ul {
+  list-style: none;
+  padding: 0;
+}
+
+@media (max-width: 425px) {
+  .navbar-nav {
+    font-size: 1rem;
+  }
+
+  .add a {
+    width: 80%;
+    font-weight: 400;
+  }
+
+  .list-group div {
+    font-weight: 400;
+  }
+
+  .purchase-container div {
+    font-weight: 500;
+  }
+
+  .pricy {
+    font-weight: bold !important;
+  }
 }

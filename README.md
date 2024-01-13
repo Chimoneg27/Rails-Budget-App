@@ -156,7 +156,7 @@ If you like this project, show your support by giving a star ⭐️, thanks in a
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for including this in their curriculum.
+This replica was originally designed by Gregoire Vella in Behance. Checkout Gregoire Vella's design [here](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -164,6 +164,6 @@ I would like to thank Microverse for including this in their curriculum.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](/MIT.md) licensed.
+This project is [MIT](/LICENSE.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

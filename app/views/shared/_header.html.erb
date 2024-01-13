@@ -1,42 +1,35 @@
-<nav class="navbar navbar-expand-lg navigation">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="container-fluid navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between">
-
-        <%# if the page is not the home page it must lead to the previous page with a back arrow  %>
-        <% if title != 'Groups' && title != 'Add New Purchases' %>
-          <li class="nav-item">
-            <%= link_to groups_path(@group) do %>
-              <button class="btn btn-outline-light" type="button" onclick="history.back()">
-                <i class="bi bi-arrow-left"></i>
-              </button>
-            <% end %>
-          </li>
+<nav class="navigation w-100 partial-header">
+  <ul class="d-flex justify-content-between w-100">
+    <% if title != 'Groups' && title != 'Add New Purchases' %>
+      <li class="nav-item">
+        <%= link_to groups_path(@group) do %>
+          <button class="btn btn-outline-light" type="button" onclick="history.back()">
+            <i class="bi bi-arrow-left"></i>
+          </button>
         <% end %>
-        <% if title == 'Add New Purchases' %>
-          <li class="nav-item">
-          <%= link_to group_purchases_path(group_id: @group.id) do %>
-            <button class="btn btn-outline-light" type="button">
-              <i class="bi bi-arrow-left"></i>
-            </button>
-          <% end %>
-          </li>
+      </li>
+    <% end %>
+    <% if title == 'Add New Purchases' %>
+      <li class="nav-item">
+        <%= link_to group_purchases_path(group_id: @group.id) do %>
+          <button class="btn btn-outline-light" type="button">
+            <i class="bi bi-arrow-left"></i>
+          </button>
         <% end %>
+      </li>
+    <% end %>
+    <li class="nav-item fs-4 fw-bold text-align-center">
+      <%= title %>
+    </li>
 
-        <li class="nav-item fs-4 fw-bold">
-          <%= title %>
-        </li>
-
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
-              <button class="btn btn-outline-light" type="button">
-                <i class="bi bi-box-arrow-right"></i>
-              </button>
-            <% end %>
-          </li>
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
+          <button class="btn btn-outline-light" type="button">
+            <i class="bi bi-box-arrow-right"></i>
+          </button>
         <% end %>
-      </ul>
-    </div>
-  </div>
+      </li>
+    <% end %>
+  </ul>
 </nav>
